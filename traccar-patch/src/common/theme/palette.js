@@ -1,4 +1,4 @@
-import { grey, green, indigo } from '@mui/material/colors';
+import { grey, green } from '@mui/material/colors';
 
 const validatedColor = (color) => (/^#([0-9A-Fa-f]{3}){1,2}$/.test(color) ? color : null);
 
@@ -15,6 +15,9 @@ const tailWindGray = {
       900: '#111827',
 }
 
+const primary = { 50: '#FFF5F2', 100: '#FFF1EE', 200: '#FFE4DE', 300: '#FFD5CC', 400: '#FFBCAD', 500: '#FE795D', 600: '#EF562F', 700: '#EB4F27', 800: '#CC4522', 900: '#A5371B' }
+
+
 export default (server, darkMode) => ({
   mode: darkMode ? 'dark' : 'light',
   background: {
@@ -22,7 +25,7 @@ export default (server, darkMode) => ({
     paper: darkMode ? tailWindGray[800] : tailWindGray[100],
   },
   primary: {
-    main: validatedColor(server?.attributes?.colorPrimary) || (darkMode ? indigo[200] : indigo[900]),
+    main: validatedColor(server?.attributes?.colorPrimary) || (darkMode ? primary[200] : primary[900]),
   },
   secondary: {
     main: validatedColor(server?.attributes?.colorSecondary) || (darkMode ? green[200] : green[800]),
