@@ -17,7 +17,7 @@
 
 <div class="h-full flex flex-col">
     {#if showNav}
-    <nav class="hidden bg-gray-800 md:block" transition:slide={{ duration: 400 }}>
+    <nav class="hidden dark:bg-gray-800 bg-gray-700 md:block" transition:slide={{ duration: 400 }}>
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="flex h-16 items-center justify-between">
                 <div class="flex items-center">
@@ -83,7 +83,7 @@
     {/if}
     <main class="h-full">
         <div class="h-full relative">
-            <button class="{$page.url.pathname !== '/main/map' ? 'hidden' : ''} absolute toggle bg-gray-100 text-gray-800 text-center px-4 rounded-b-md cursor-pointer left-1/2"
+            <button class="{$page.url.pathname !== '/main/map' ? 'hidden' : ''} border-solid border-2 absolute toggle bg-gray-100 text-gray-800 text-center px-4 rounded-b-md cursor-pointer left-1/2"
                  onclick="{() => (showNav = !showNav)}">
                 <span class="inline-block align-top">{showNav ? '▲' : '▼'}</span>
             </button>
