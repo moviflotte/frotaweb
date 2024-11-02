@@ -4,6 +4,8 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
+		"prebuild-traccar": "./prebuild.sh",
+		"build-traccar": "cd traccar-web && npm install && npm run build && rm -rf ../static/map && mv build ../static/map",
 		"build": "vite build",
 		"preview": "vite preview",
 		"lint": "eslint ."
@@ -20,5 +22,8 @@
 		"svelte": "^5.0.0",
 		"tailwindcss": "^3.4.9",
 		"vite": "^5.0.3"
+	},
+	"dependencies": {
+		"@sveltejs/adapter-static": "^3.0.6"
 	}
 }
