@@ -8,6 +8,7 @@
 		"build-traccar": "cd traccar-web && npm install && npm run build",
 		"prebuild": "npm run build-traccar",
 		"build": "vite build && mkdir output && mv build output/main && mv traccar-web/build output/map",
+		"postbuild": "mv _redirects output",
 		"preview": "vite preview",
 		"lint": "eslint ."
 	},
