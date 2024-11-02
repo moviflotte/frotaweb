@@ -5,7 +5,7 @@
 	"scripts": {
 		"dev": "vite dev",
 		"prebuild-traccar": "./prebuild.sh",
-		"build-traccar": "cd traccar-web && npm install && npm run build && rm -rf ../static/map && mv build ../static/map",
+		"build-traccar": "cd traccar-web && npm install && npm run build",
 		"build": "vite build",
 		"preview": "vite preview",
 		"lint": "eslint ."
