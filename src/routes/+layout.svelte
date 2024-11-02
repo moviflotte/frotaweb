@@ -1,12 +1,12 @@
 <script>
     import '../app.css';
-    import { fade } from 'svelte/transition';
+    import { fade, slide } from 'svelte/transition';
     import { page } from '$app/stores';
 
 
     let { children } = $props();
     let menuVisible = $state(false)
-    let hideNav = $state(false)
+    let showNav = $state(true)
     let menuItems = [
         {url: '/main/', value: 'Dashboard'},
         {url: '/main/map', value: 'Map'},
@@ -14,8 +14,10 @@
         {url: '/main/map/settings/preferences', value: 'Settings'}
     ]
 </script>
+
 <div class="h-full flex flex-col">
-    <nav class="hidden md:block bg-gray-800 {hideNav ? 'hidden': ''}">
+    {#if showNav}
+    <nav class="hidden bg-gray-800 md:block" transition:slide={{ duration: 400 }}>
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="flex h-16 items-center justify-between">
                 <div class="flex items-center">
@@ -32,7 +34,7 @@
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-4 flex items-center md:ml-6">
-                        <button onclick="{() => (hideNav=true)}" type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                        <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                             <span class="absolute -inset-1.5"></span>
                             <span class="sr-only">View notifications</span>
                             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
@@ -78,8 +80,13 @@
             </div>
         </div>
     </nav>
+    {/if}
     <main class="h-full">
-        <div class="h-full">
+        <div class="h-full relative">
+            <button class="{$page.url.pathname !== '/main/map' ? 'hidden' : ''} absolute toggle bg-gray-100 text-gray-800 text-center px-4 rounded-b-md cursor-pointer left-1/2"
+                 onclick="{() => (showNav = !showNav)}">
+                <span class="inline-block align-top">{showNav ? '▲' : '▼'}</span>
+            </button>
             {@render children()}
         </div>
     </main>
