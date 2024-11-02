@@ -20,7 +20,7 @@
 
 <div class="h-full flex flex-col">
     {#if showNav}
-    <nav class="hidden dark:bg-gray-800 bg-gray-700 lg:block" transition:slide={{ duration: 400 }}>
+    <nav class="hidden dark:bg-gray-800 bg-gray-700 lg:block" transition:slide={{ duration: 500 }}>
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="flex h-16 items-center justify-between">
                 <div class="flex items-center">
@@ -56,9 +56,12 @@
                             </div>
                             {#if menuVisible}
                             <div onmouseleave="{menuVisible=false}" transition:fade={{ duration: 100 }} class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-                                <!-- Active: "bg-gray-100", Not Active: "" -->
-                                <a href="/" onmouseenter="{() => (itemActive='profile')}" class="{itemActive === 'profile' ? 'bg-gray-100' : ''} block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
-                                <a onclick="{logout}" onmouseenter="{() => (itemActive='signOut')}" class="{itemActive === 'signOut' ? 'bg-gray-100' : ''} block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Sign out</a>
+                                {#each [
+                                    {href: '/main/map/settings/user/' + data.session.id, name: 'Perfil'},
+                                    {href: '/', name: 'Sair', onClick: logout}
+                                ] as item }
+                                <a onclick="{item.onClick}" href="{item.href}" onmouseenter="{() => (itemActive=item.name)}" class="{itemActive === item.name ? 'bg-gray-100' : ''} cursor-pointer block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">{item.name}</a>
+                                {/each}
                             </div>
                             {/if}
                         </div>
