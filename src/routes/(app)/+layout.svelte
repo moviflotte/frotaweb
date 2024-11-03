@@ -1,8 +1,7 @@
 <script>
-    import '../app.css';
+    import '../../app.css';
     import { fade, slide } from 'svelte/transition';
     import { page } from '$app/stores';
-
 
     let { children, data } = $props();
     let menuVisible = $state(false)
@@ -16,6 +15,7 @@
     ]
 
     const logout = () => fetch('/api/session', { method: 'DELETE' });
+
 </script>
 
 <div class="h-full flex flex-col">
