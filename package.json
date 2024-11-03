@@ -4,8 +4,6 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
-		"prebuild-traccar": "./prebuild.sh",
-		"build-traccar": "cd traccar-web && npm install && npm run generate-pwa-assets && npm run build",
 		"prebuild": "npm run build-traccar",
 		"build": "vite build && rm -rf output && mkdir output && mv build output/main && mv traccar-web/build output/map",
 		"postbuild": "cp -v _redirects output",
