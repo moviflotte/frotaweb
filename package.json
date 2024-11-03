@@ -4,8 +4,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
-		"prebuild": "npm run build-traccar",
-		"build": "vite build && rm -rf output && mkdir output && mv build output/main && mv traccar-web/build output/map",
+		"build": "vite build",
 		"postbuild": "cp -v _redirects output",
 		"preview": "vite preview",
 		"lint": "eslint ."
