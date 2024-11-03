@@ -5,6 +5,6 @@ export const load = async (event) => {
     if (response.ok) {
         return {session: await response.json()};
     } else {
-        await goto('/main/login')
+        await goto('/login')
     }
 };
