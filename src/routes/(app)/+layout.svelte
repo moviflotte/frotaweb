@@ -8,7 +8,7 @@
     let showNav = $state(true)
     let itemActive = $state('')
     let menuItems = [
-        {url: '/dashboard', value: 'Dashboard'},
+        {url: '/', value: 'Dashboard'},
         {url: '/map', value: 'Map'},
         {url: '/map/reports/combined', value: 'Reports'},
         {url: '/map/settings/preferences', value: 'Settings'}
