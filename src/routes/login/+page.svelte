@@ -12,7 +12,7 @@
                     body: new URLSearchParams(query),
                 });
                 if (response.ok) {
-                    await goto('/main')
+                    await goto('/')
                 } else {
                     alert(await response.text());
                 }
