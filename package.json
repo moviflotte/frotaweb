@@ -5,7 +5,6 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
-		"postbuild": "cp -v _redirects output",
 		"preview": "vite preview",
 		"lint": "eslint ."
 	},
