@@ -72,7 +72,7 @@
     {/if}
     <main class="h-full">
         <div class="h-full relative">
-            <button class="hidden {$page.url.pathname !== '/main/map' ? '' : 'lg:block'} border-solid border-2 absolute toggle bg-gray-100 text-gray-800 text-center px-4 rounded-b-md cursor-pointer left-1/2"
+            <button class="hidden {$page.url.pathname !== '/map' ? '' : 'lg:block'} border-solid border-2 absolute toggle bg-gray-100 text-gray-800 text-center px-4 rounded-b-md cursor-pointer left-1/2"
                  onclick="{() => (showNav = !showNav)}">
                 <span class="inline-block align-top">{showNav ? '▲' : '▼'}</span>
             </button>
