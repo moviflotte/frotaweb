@@ -2,6 +2,7 @@
     import '../../app.css';
     import { fade, slide } from 'svelte/transition';
     import { page } from '$app/stores';
+    import {goto} from "$app/navigation";
 
     let { children, data } = $props();
     let menuVisible = $state(false)
@@ -9,12 +10,13 @@
     let itemActive = $state('')
     let menuItems = [
         {url: '/', value: 'Dashboard'},
-        {url: '/map', value: 'Map'},
-        {url: '/map/reports/combined', value: 'Reports'},
-        {url: '/map/settings/preferences', value: 'Settings'}
+        {url: '/map', value: 'Mapa'},
+        {url: '/map/reports/combined', value: 'Relatórios'},
+        {url: '/map/settings/preferences', value: 'Definições'}
     ]
 
-    const logout = () => fetch('/api/session', { method: 'DELETE' });
+    const logout = () => fetch('/api/session', { method: 'DELETE' })
+        .then(() => goto('/login'));
 
 </script>
 
@@ -54,9 +56,9 @@
                                 </button>
                             </div>
                             {#if menuVisible}
-                            <div onmouseleave="{menuVisible=false}" transition:fade={{ duration: 100 }} class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+                            <div onmouseleave="{() => (menuVisible=false)}" transition:fade={{ duration: 100 }} class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
                                 {#each [
-                                    {href: '/main/map/settings/user/' + data.session.id, name: 'Perfil'},
+                                    {href: '/map/settings/user/' + data.session.id, name: 'Perfil'},
                                     {href: '/', name: 'Sair', onClick: logout}
                                 ] as item }
                                 <a onclick="{item.onClick}" href="{item.href}" onmouseenter="{() => (itemActive=item.name)}" class="{itemActive === item.name ? 'bg-gray-100' : ''} cursor-pointer block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">{item.name}</a>
