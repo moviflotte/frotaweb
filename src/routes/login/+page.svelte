@@ -26,7 +26,7 @@
 </script>
 <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
     <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-        <img class="mx-auto w-full" src="https://rastreosat.github.io/{window.location.hostname}/logo_large.png" alt="{window.location.hostname}">
+        <img class="mx-auto w-full" src="https://rastreosat.github.io/{window.location.hostname}/logo_large.svg" alt="{window.location.hostname}">
     </div>
 
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
