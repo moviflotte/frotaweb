@@ -41,7 +41,7 @@
                 <div class="flex items-center justify-between">
                     <label for="password" class="block text-sm/6 font-medium text-gray-900">Password</label>
                     <div class="text-sm">
-                        <a href="#" class="font-semibold text-orange-600 hover:text-orange-500">Forgot password?</a>
+                        <a href="#" class="font-semibold text-orange-600 hover:text-orange-500">Esqueceu a senha?</a>
                     </div>
                 </div>
                 <div class="mt-2">
@@ -50,7 +50,7 @@
             </div>
 
             <div>
-                <button type="submit" class="flex w-full justify-center rounded-md bg-orange-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600">Sign in</button>
+                <button type="submit" class="flex w-full justify-center rounded-md bg-orange-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600">Entrar</button>
             </div>
         </form>
 
