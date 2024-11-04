@@ -27,8 +27,9 @@
             <div class="flex h-16 items-center justify-between">
                 <div class="flex items-center">
                     <div class="flex-shrink-0">
-                        <img class="h-8 w-8" src="https://rastreosat.github.io/logo.svg" alt="Your Company">
+                        <img class="h-10" src="https://rastreosat.github.io/logo.svg" alt="Your Company">
                     </div>
+                    <span class="text-gray-100   font-medium">frotaweb</span>
                     <div class="hidden md:block">
                         <div class="ml-10 flex items-baseline space-x-4">
                             {#each menuItems as item}
