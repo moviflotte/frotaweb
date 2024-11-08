@@ -8,7 +8,7 @@ function translate(key) {
 
   let text = translations[locale] && translations[locale][key];
 
-  if (!text) return key + locale
+  if (!text) return key
 
   return text;
 }
