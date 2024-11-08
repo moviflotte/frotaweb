@@ -3,6 +3,7 @@
     import { fade, slide } from 'svelte/transition';
     import { page } from '$app/stores';
     import {goto} from "$app/navigation";
+    import { t } from "$lib/i18n";
 
     let { children, data } = $props();
     let menuVisible = $state(false)
@@ -11,8 +12,8 @@
     let menuItems = [
         {url: '/', value: 'Dashboard'},
         {url: '/map', value: 'Mapa'},
-        {url: '/map/reports/combined', value: 'Relatórios'},
-        {url: '/map/settings/preferences', value: 'Definições'}
+        {url: '/map/reports/combined', value: t('Relatórios')},
+        {url: '/map/settings/preferences', value: t('Definições')}
     ]
 
     const logout = () => fetch('/api/session', { method: 'DELETE' })
