@@ -13,7 +13,6 @@
         {url: '/', value: 'Dashboard'},
         {url: '/map', value: 'Mapa'},
         {url: '/map/reports/combined', value: t('Relatórios')},
-        {url: '/map/reports/combined', value: t('Relatórios')},
         {url: '/map/settings/preferences', value: t('Definições')}
     ]
 
