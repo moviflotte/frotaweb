@@ -41,7 +41,7 @@
                 <div class="flex items-center justify-between">
                     <label for="password" class="block text-sm/6 font-medium text-gray-900">Password</label>
                     <div class="text-sm">
-                        <a href="#" class="font-semibold text-orange-600 hover:text-orange-500">Esqueceu a senha?</a>
+                        <a href="/login" class="font-semibold text-orange-600 hover:text-orange-500">Esqueceu a senha?</a>
                     </div>
                 </div>
                 <div class="mt-2">
@@ -56,7 +56,7 @@
 
         <p class="mt-10 text-center text-sm/6 text-gray-500">
             Não é cliente?
-            <a href="#" class="font-semibold text-orange-600 hover:text-orange-500">Experimente grátis durante 14 dias</a>
+            <a href="/login" class="font-semibold text-orange-600 hover:text-orange-500">Experimente grátis durante 14 dias</a>
         </p>
     </div>
 </div>
