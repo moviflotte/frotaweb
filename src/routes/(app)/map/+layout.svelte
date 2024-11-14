@@ -3,23 +3,20 @@
     import {derived} from 'svelte/store';
     import {onMount} from "svelte";
     let { children } = $props();
-    let iframeRef;
+    let iframe;
 
-    const pathname = derived(page, ($page) => $page.url.pathname);
+    const pathname = derived(page, (_page) => _page.url.pathname);
 
-    onMount(() => {
-        pathname.subscribe((_path) => {
+    onMount(() =>
+        pathname.subscribe(_path => {
             const path = _path.replace('/map', '/')
-            console.log(_path, path)
-            if (iframeRef && iframeRef.contentWindow) {
-                iframeRef.contentWindow.postMessage({type: 'navigate', path}, '*');
-            } else {
-                console.warn("iframeRef is not yet initialized.", iframeRef);
+            if (iframe && iframe.contentWindow) {
+                iframe.contentWindow.postMessage({type: 'navigate', path}, '*')
             }
         })
-    })
+    )
 
 </script>
-<iframe bind:this={iframeRef} style="width: 100%; height: 100%" title="map" src="{window.location.pathname.replace('/map', '/traccar')}">
+<iframe bind:this={iframe} style="width: 100%; height: 100%" title="map" src="{window.location.pathname.replace('/map', '/traccar')}">
 </iframe>
 {@render children()}
