@@ -31,7 +31,9 @@
 
 <div class="h-full flex flex-col">
     {#if showNav}
-    <nav class="hidden dark:bg-gray-800 bg-gray-700 lg:block" transition:slide={{ duration: 500 }}>
+    <nav class="hidden dark:bg-gray-800 bg-gray-700 lg:block z-50"
+         style="box-shadow: 0 3px 3px -2px #0003,0 3px 4px #00000024,0 1px 8px #0000001f" transition:slide={{ duration: 500 }}
+    >
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="flex h-16 items-center justify-between">
                 <div class="flex items-center">
