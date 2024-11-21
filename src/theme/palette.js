@@ -302,8 +302,8 @@ const tailwind = {
 export default (server, darkMode) => ({
     mode: darkMode ? 'dark' : 'light',
     background: {
-        default: darkMode ? tailwind.gray[900] : tailwind.gray[50],
-        paper: darkMode ? tailwind.gray[800] : tailwind.gray[100],
+        default: darkMode ? tailwind.gray[900] : tailwind.gray[100],
+        paper: darkMode ? tailwind.gray[800] : tailwind.gray[200],
     },
     primary: {
         main: darkMode ? tailwind.primary[200] : tailwind.primary[600],
@@ -317,4 +317,5 @@ export default (server, darkMode) => ({
     geometry: {
         main: tailwind.orange[900]
     },
+    tailwind
 });
