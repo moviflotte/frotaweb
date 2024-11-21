@@ -1,3 +1,4 @@
+// noinspection JSNonASCIINames
 export default {
     es: {
         'Relatórios': 'Informes',
