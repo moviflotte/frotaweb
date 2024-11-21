@@ -38,12 +38,13 @@
             <div class="flex h-16 items-center justify-between">
                 <div class="flex items-center">
                     <div class="flex-shrink-0">
-                        <img class="h-10" src="https://rastreosat.github.io/{window.location.hostname}/logo_large.svg" alt="{window.location.hostname}">
+                        <img class="h-10 dark:hidden" src="https://rastreosat.github.io/{window.location.hostname}/logo_large.svg" alt="{window.location.hostname}">
+                        <img class="h-10 hidden dark:block" src="https://rastreosat.github.io/{window.location.hostname}/logo_large.svg" alt="{window.location.hostname}">
                     </div>
                     <div class="hidden md:block">
                         <div class="ml-10 flex items-baseline space-x-4">
                             {#each menuItems as item}
-                            <a href="{item.url}" class="{item.url === $page.url.pathname ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}  rounded-md px-3 py-2 text-sm font-medium " aria-current="page">{item.value}</a>
+                            <a href="{item.url}" class="{item.url === $page.url.pathname ? 'bg-gray-900 text-white' : 'text-gray-400 hover:bg-gray-700 hover:text-white'}  rounded-md px-3 py-2 text-sm font-medium " aria-current="page">{item.value}</a>
                             {/each}
                         </div>
                     </div>
