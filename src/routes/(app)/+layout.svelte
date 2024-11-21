@@ -39,7 +39,7 @@
                 <div class="flex items-center">
                     <div class="flex-shrink-0">
                         <img class="h-10 dark:hidden" src="https://rastreosat.github.io/{window.location.hostname}/logo_large.svg" alt="{window.location.hostname}">
-                        <img class="h-10 hidden dark:block" src="https://rastreosat.github.io/{window.location.hostname}/logo_large.svg" alt="{window.location.hostname}">
+                        <img class="h-10 hidden dark:block" src="https://rastreosat.github.io/{window.location.hostname}/logo_large_dark.svg" alt="{window.location.hostname}">
                     </div>
                     <div class="hidden md:block">
                         <div class="ml-10 flex items-baseline space-x-4">
