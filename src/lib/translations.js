@@ -1,6 +1,8 @@
 export default {
     es: {
         'Relatórios': 'Informes',
-        'Definições': 'Ajustes'
+        'Definições': 'Ajustes',
+        'Password': 'Contraseña',
+        'Esqueceu a senha?': 'Olvidó su contraseña?'
     },
 };
