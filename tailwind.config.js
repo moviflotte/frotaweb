@@ -19,7 +19,9 @@ export default {
       },
       colors: {
         darkBg: pallete(null, true).background.default,
-        lightBg: pallete(null, false).background.default
+        lightBg: pallete(null, false).background.default,
+        primary: pallete(null, false).primary.main,
+        primaryDark: pallete(null, true).primary.main
       }
     }
   },
