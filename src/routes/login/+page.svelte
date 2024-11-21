@@ -55,9 +55,9 @@
             </div>
         </form>
 
-        <!--p class="mt-10 text-center text-sm/6 text-gray-500">
-            Não é cliente?
-            <a href="/login" class="font-semibold text-orange-600 hover:text-orange-500">Experimente grátis durante 14 dias</a>
-        </p-->
+        <p class="mt-10 text-center text-sm/6 text-gray-500">
+            {t('Não é cliente?')}
+            <a href="/login" class="font-semibold text-orange-600 hover:text-orange-500">{t('Experimente grátis durante 14 dias')}</a>
+        </p>
     </div>
 </div>
