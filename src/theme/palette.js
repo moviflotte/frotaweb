@@ -312,7 +312,7 @@ export default (server, darkMode) => ({
         main: darkMode ? tailwind.green[200] : tailwind.green[800],
     },
     neutral: {
-        main: tailwind.gray[600],
+        main: tailwind.neutral[100],
     },
     geometry: {
         main: tailwind.orange[900]
