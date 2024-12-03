@@ -5,6 +5,7 @@
     import {goto} from "$app/navigation";
     import { t } from "$lib/i18n";
     import palette from "../../theme/palette.js";
+    import {headerClicked} from '$lib/store'
 
     let { children, data } = $props();
     let menuVisible = $state(false)
@@ -45,7 +46,7 @@
                     <div class="hidden md:block">
                         <div class="ml-10 flex items-baseline space-x-4">
                             {#each menuItems as item}
-                            <a href="{item.url}" class="{item.url === $page.url.pathname ? 'bg-primary text-white' : 'text-gray-400 hover:bg-gray-400 hover:text-white'}  rounded-md px-3 py-2 text-sm font-medium " aria-current="page">{item.value}</a>
+                            <a onclick="{() => headerClicked.set(item.url + '?t=' + new Date().getTime())}" href="{item.url}" class="{item.url === $page.url.pathname ? 'bg-primary text-white' : 'text-gray-400 hover:bg-gray-400 hover:text-white'}  rounded-md px-3 py-2 text-sm font-medium " aria-current="page">{item.value}</a>
                             {/each}
                         </div>
                     </div>
@@ -66,7 +67,7 @@
                                     <span class="absolute -inset-1.5"></span>
                                     <span class="sr-only">Open user menu</span>
                                     <img class="h-8 w-8 rounded-full  " src="https://ui-avatars.com/api/?name={
-                                        data.session && data.session.name}&background={
+                                        data && data.session && data.session.name}&background={
                                         palette().tailwind.gray[800].replace('#','')}&color={
                                         palette().tailwind.gray[400].replace('#','')
                                         }" alt="">

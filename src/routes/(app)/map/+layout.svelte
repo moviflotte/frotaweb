@@ -2,18 +2,23 @@
     import {page} from "$app/stores";
     import {derived} from 'svelte/store';
     import {onMount} from "svelte";
+    import {headerClicked} from "../../../lib/store.js";
     let { children } = $props();
     let iframe;
 
     const pathname = derived(page, (_page) => _page.url.pathname);
 
-    onMount(() =>
-        pathname.subscribe(_path => {
-            const path = _path.replace('/map', '/')
-            if (iframe && iframe.contentWindow) {
-                iframe.contentWindow.postMessage({type: 'navigate', path}, '*')
+    onMount(() => {
+            const pathChanged = _path => {
+                if (!_path) { return }
+                const path = _path.replace('/map', '/')
+                if (iframe && iframe.contentWindow) {
+                    iframe.contentWindow.postMessage({type: 'navigate', path}, '*')
+                }
             }
-        })
+            pathname.subscribe(pathChanged)
+            headerClicked.subscribe(pathChanged)
+        }
     )
 
 </script>
