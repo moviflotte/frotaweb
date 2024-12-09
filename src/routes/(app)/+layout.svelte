@@ -15,6 +15,7 @@
         {url: '/', value: 'Dashboard'},
         {url: '/map', value: 'Mapa'},
         {url: '/map/reports/combined', value: t('Relatórios')},
+        {url: '/rep', value: t('Relatórios Gestão')},
         {url: '/map/settings/preferences', value: t('Definições')}
     ]
 
