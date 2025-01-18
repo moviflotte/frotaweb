@@ -24,6 +24,10 @@
 
     let email = $state('')
     let password = $state('')
+    let openid = new URLSearchParams(window.location.search).has('openid')
+    if (openid) {
+        window.location.href = '/map/api/session/openid/auth'
+    }
 </script>
 <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
     <div class="sm:mx-auto sm:w-full sm:max-w-sm">
