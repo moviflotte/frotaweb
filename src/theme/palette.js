@@ -77,6 +77,18 @@ const tailwind = {
         900: "#7f1d1d",
         950: "#450a0a"
     },
+    primary: {
+        50: '#FFF5F2',
+        100: '#FFF1EE',
+        200: '#FFE4DE',
+        300: '#FFD5CC',
+        400: '#FFBCAD',
+        500: '#FE795D',
+        600: '#EF562F',
+        700: '#EB4F27',
+        800: '#CC4522',
+        900: '#A5371B'
+    },
     orange: {
         50: "#fff7ed",
         100: "#ffedd5",
@@ -290,19 +302,20 @@ const tailwind = {
 export default (server, darkMode) => ({
     mode: darkMode ? 'dark' : 'light',
     background: {
-        default: darkMode ? tailwind.gray[900] : tailwind.gray[50],
-        paper: darkMode ? tailwind.gray[800] : tailwind.gray[100],
+        default: darkMode ? tailwind.gray[900] : tailwind.gray[100],
+        paper: darkMode ? tailwind.gray[800] : tailwind.gray[200],
     },
     primary: {
-        main: darkMode ? tailwind.orange[200] : tailwind.orange[900],
+        main: darkMode ? tailwind.primary[200] : tailwind.primary[600],
     },
     secondary: {
         main: darkMode ? tailwind.green[200] : tailwind.green[800],
     },
     neutral: {
-        main: tailwind.gray[600],
+        main: tailwind.neutral[100],
     },
     geometry: {
         main: tailwind.orange[900]
     },
+    tailwind
 });
