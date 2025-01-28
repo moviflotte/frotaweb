@@ -2,6 +2,7 @@
     import '../../app.css'
     import {goto} from "$app/navigation";
     import {t} from '$lib/i18n'
+    import {onMount} from "svelte";
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -24,6 +25,15 @@
 
     let email = $state('')
     let password = $state('')
+    let color = $state('#ea580c')
+    onMount(async () => {
+        try {
+            const response = await fetch(`https://raw.githubusercontent.com/rastreosat/rastreosat.github.io/refs/heads/main/${window.location.hostname}/color.json`)
+            if (response.ok) {
+                color = await response.json()
+            }
+        } catch {/* empty */ }
+    })
 </script>
 <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
     <div class="sm:mx-auto sm:w-full sm:max-w-sm">
@@ -51,7 +61,7 @@
             </div>
 
             <div>
-                <button type="submit" class="flex w-full justify-center rounded-md bg-orange-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600">Entrar</button>
+                <button type="submit" style="{'background: ' + color}" class="flex w-full justify-center rounded-md px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600">Entrar</button>
             </div>
         </form>
 
