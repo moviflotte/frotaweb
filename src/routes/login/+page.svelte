@@ -25,6 +25,12 @@
 
     let email = $state('')
     let password = $state('')
+
+    let openid = new URLSearchParams(window.location.search).has('openid')
+    if (openid) {
+        window.location.href = '/map/api/session/openid/auth'
+    }
+
     let color = $state('#ea580c')
     onMount(async () => {
         try {
@@ -34,8 +40,9 @@
             }
         } catch {/* empty */ }
     })
+
 </script>
-<div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+<div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8" style="{openid && 'display:none'}">
     <div class="sm:mx-auto sm:w-full sm:max-w-sm">
         <img class="mx-auto w-full" src="https://rastreosat.github.io/{window.location.hostname}/logo_large.svg" alt="{window.location.hostname}">
     </div>
