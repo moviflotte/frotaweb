@@ -18,8 +18,7 @@
                 if (response.ok) {
                     await goto('/')
                 } else {
-                    console.log(response)
-                    toast.push(t(response.statusText))
+                    toast.push(t(response.statusText || response.status))
                 }
             }
         }
