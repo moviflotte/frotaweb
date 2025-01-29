@@ -3,6 +3,8 @@
     import {goto} from "$app/navigation";
     import {t} from '$lib/i18n'
     import {onMount} from "svelte";
+    import {SvelteToast, toast} from '@zerodevx/svelte-toast'
+    import theme from "../../theme/palette.js";
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -16,7 +18,8 @@
                 if (response.ok) {
                     await goto('/')
                 } else {
-                    alert(t(response.statusText))
+                    console.log(response)
+                    toast.push(t(response.statusText))
                 }
             }
         }
@@ -42,6 +45,22 @@
     })
 
 </script>
+<style>
+    :root {
+        --toastContainerTop: auto;
+        --toastContainerRight: auto;
+        --toastContainerBottom: 8rem;
+        --toastContainerLeft: calc(50vw - 8rem);
+    }
+</style>
+<SvelteToast options={
+{ reversed: true, intro: { y: 192 },
+  theme: {
+    // '--toastColor': 'red',
+    '--toastBackground': theme(false, false).primary.main,
+    '--toastBarBackground': color
+  }
+}} />
 <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8" style="{openid && 'display:none'}">
     <div class="sm:mx-auto sm:w-full sm:max-w-sm">
         <img class="mx-auto w-full" src="https://rastreosat.github.io/{window.location.hostname}/logo_large.svg" alt="{window.location.hostname}">
