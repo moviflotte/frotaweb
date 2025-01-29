@@ -16,7 +16,7 @@
                 if (response.ok) {
                     await goto('/')
                 } else {
-                    alert(await response.text());
+                    alert(t(response.statusText))
                 }
             }
         }
