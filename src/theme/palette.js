@@ -302,7 +302,7 @@ const tailwind = {
 export default (server, darkMode) => ({
     mode: darkMode ? 'dark' : 'light',
     background: {
-        default: darkMode ? tailwind.gray[900] : tailwind.gray[100],
+        default: darkMode ? '#363e49' : tailwind.gray[100],
         paper: darkMode ? tailwind.gray[800] : tailwind.gray[200],
     },
     primary: {

@@ -3,6 +3,8 @@
     import {goto} from "$app/navigation";
     import {t} from '$lib/i18n'
     import {onMount} from "svelte";
+    import {SvelteToast, toast} from '@zerodevx/svelte-toast'
+    import theme from "../../theme/palette.js";
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -16,7 +18,7 @@
                 if (response.ok) {
                     await goto('/')
                 } else {
-                    alert(await response.text());
+                    toast.push(t(response.statusText || response.status))
                 }
             }
         }
@@ -42,6 +44,22 @@
     })
 
 </script>
+<style>
+    :root {
+        --toastContainerTop: auto;
+        --toastContainerRight: auto;
+        --toastContainerBottom: 8rem;
+        --toastContainerLeft: calc(50vw - 8rem);
+    }
+</style>
+<SvelteToast options={
+{ reversed: true, intro: { y: 192 },
+  theme: {
+    // '--toastColor': 'red',
+    '--toastBackground': theme(false, false).primary.main,
+    '--toastBarBackground': color
+  }
+}} />
 <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8" style="{openid && 'display:none'}">
     <div class="sm:mx-auto sm:w-full sm:max-w-sm">
         <img class="mx-auto w-full" src="https://rastreosat.github.io/{window.location.hostname}/logo_large.svg" alt="{window.location.hostname}">
@@ -59,7 +77,7 @@
                 <div class="flex items-center justify-between">
                     <label for="password" class="block text-sm/6 font-medium text-gray-900">{t('Password')}</label>
                     <div class="text-sm">
-                        <a href="/login" class="font-semibold text-orange-600 hover:text-orange-500">{t('Esqueceu a senha?')}</a>
+                        <a href="/login" style="{'color: ' + color}" class="font-semibold">{t('Esqueceu a senha?')}</a>
                     </div>
                 </div>
                 <div class="mt-2">
@@ -72,9 +90,9 @@
             </div>
         </form>
 
-        <p class="mt-10 text-center text-sm/6 text-gray-500">
+        <!--p class="mt-10 text-center text-sm/6 text-gray-500">
             {t('Não é cliente?')}
             <a href="/login" class="font-semibold text-orange-600 hover:text-orange-500">{t('Experimente grátis durante 14 dias')}</a>
-        </p>
+        </p-->
     </div>
 </div>
