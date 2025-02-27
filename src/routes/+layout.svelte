@@ -8,8 +8,16 @@
 </script>
 
 <svelte:head>
+ 	{@html webManifestLink} 
     <title>{title}
     </title>
 </svelte:head>
 
 <slot></slot>
+
+<script>
+  import { pwaInfo } from 'virtual:pwa-info'; 
+
+  $: webManifestLink = pwaInfo ? pwaInfo.webManifest.linkTag : '' 
+</script> 
+  
