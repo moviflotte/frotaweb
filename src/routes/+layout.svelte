@@ -8,20 +8,16 @@
             })
         }
     })
+    import { pwaInfo } from 'virtual:pwa-info';
+
+    $: webManifestLink = pwaInfo ? pwaInfo.webManifest.linkTag : ''
 </script>
 
 <svelte:head>
- 	{@html webManifestLink} 
+    {@html webManifestLink}
     <title>{title}
     </title>
-    <link rel="icon" type="image/png" href="{favicon}">
+    <link rel="icon" href="{favicon}"/>
 </svelte:head>
 
 <slot></slot>
-
-<script>
-  import { pwaInfo } from 'virtual:pwa-info'; 
-
-  $: webManifestLink = pwaInfo ? pwaInfo.webManifest.linkTag : '' 
-</script> 
-  
