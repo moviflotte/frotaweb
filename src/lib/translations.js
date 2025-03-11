@@ -11,6 +11,16 @@ export default {
         'Unauthorized': 'Contraseña o usuário invalidos',
         '401': 'Contraseña o usuário invalidos'
     },
+    fr: {
+        'Relatórios': 'Rapports',
+        'Definições': 'Paramètres',
+        'Password': 'Mot de passe',
+        'Esqueceu a senha?': 'Mot de passe oublié?',
+        'Não é cliente?': 'Vous n\'êtes pas client?',
+        'Relatórios Gestão': 'Rapports de gestion',
+        'Unauthorized': 'Mot de passe ou nom d\'utilisateur invalide',
+        '401': 'Mot de passe ou nom d\'utilisateur invalide'
+    },
     pt: {
         'Unauthorized': 'A combinação utilizador / senha é inválida',
         '401': 'A combinação utilizador / senha é inválida'
