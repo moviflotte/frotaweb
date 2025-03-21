@@ -22,15 +22,6 @@
     const logout = () => fetch('/api/session', { method: 'DELETE' })
         .then(() => goto('/login'));
 
-    function showArrow() {
-        switch ($page.url.pathname) {
-            case '/map':
-            case '/':
-                return true
-        }
-        return false
-    }
-
 </script>
 
 <div class="h-full flex flex-col">
@@ -94,7 +85,7 @@
     {/if}
     <main class="h-full">
         <div class="h-full relative">
-            <a class="px-3 hidden {showArrow() ? 'lg:block' : ''} border-solid border-2 absolute toggle bg-gray-100 text-gray-800 rounded-b-md cursor-pointer left-1/2"
+            <a class="px-3 hidden lg:block border-solid border-2 absolute toggle bg-gray-100 text-gray-800 rounded-b-md cursor-pointer left-1/2"
                  onclick="{() => (showNav = !showNav)}">
                 <div class="left-1/2 text-xs text-center">{showNav ? '▲' : '▼'}</div>
             </a>
