@@ -94,10 +94,10 @@
     {/if}
     <main class="h-full">
         <div class="h-full relative">
-            <button class="hidden {showArrow() ? 'lg:block' : ''} border-solid border-2 absolute toggle bg-gray-100 text-gray-800 text-center px-4 rounded-b-md cursor-pointer left-1/2"
+            <a class="px-3 hidden {showArrow() ? 'lg:block' : ''} border-solid border-2 absolute toggle bg-gray-100 text-gray-800 rounded-b-md cursor-pointer left-1/2"
                  onclick="{() => (showNav = !showNav)}">
-                <span class="inline-block align-top">{showNav ? '▲' : '▼'}</span>
-            </button>
+                <div class="left-1/2 text-xs text-center">{showNav ? '▲' : '▼'}</div>
+            </a>
             {@render children()}
         </div>
     </main>
