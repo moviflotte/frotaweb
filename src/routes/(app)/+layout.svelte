@@ -25,6 +25,7 @@
     function showArrow() {
         switch ($page.url.pathname) {
             case '/map':
+            case '/':
                 return true
         }
         return false
