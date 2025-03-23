@@ -11,6 +11,13 @@
     import { pwaInfo } from 'virtual:pwa-info';
 
     $: webManifestLink = pwaInfo ? pwaInfo.webManifest.linkTag : ''
+    console.log('listening events')
+    window.addEventListener("message", (event) => {
+        console.log('received', event)
+        if (event.data.type === "openUrl") {
+            window.location = event.data.url
+        }
+    });
 </script>
 
 <svelte:head>
