@@ -22,6 +22,6 @@
     )
 
 </script>
-<iframe bind:this={iframe} style="width: 100%; height: 100%" title="map" src="{window.location.pathname.replace('/map', '/traccar')}">
+<iframe bind:this={iframe} style="width: 100%; height: 100%" title="map" src="{window.location.pathname.replace('/map', '/traccar')+window.location.search}">
 </iframe>
 {@render children()}
