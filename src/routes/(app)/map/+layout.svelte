@@ -21,6 +21,7 @@
         }
     )
     window.addEventListener("message", (event) => {
+        console.log('received', event)
         if (event.data.type === "openUrl") {
             window.location = event.data.url
         }
