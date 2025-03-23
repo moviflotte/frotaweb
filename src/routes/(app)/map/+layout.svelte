@@ -20,6 +20,7 @@
             headerClicked.subscribe(pathChanged)
         }
     )
+    console.log('listening events')
     window.addEventListener("message", (event) => {
         console.log('received', event)
         if (event.data.type === "openUrl") {
