@@ -18,6 +18,9 @@
         {url: '/rep', value: t('Relatórios Gestão')},
         {url: '/map/settings/preferences', value: t('Definições')}
     ]
+    if (data.session && data.session.deviceLimit === -1) {
+        menuItems.push({url: '/cfg', value: t('Config')})
+    }
 
     const logout = () => fetch('/api/session', { method: 'DELETE' })
         .then(() => goto('/login'));
