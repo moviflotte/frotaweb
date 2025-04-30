@@ -1,11 +1,17 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 import { SvelteKitPWA } from '@vite-pwa/sveltekit'
+import { sentrySvelteKit } from "@sentry/sveltekit";
 
 export default defineConfig({
 	plugins: [
 		sveltekit(),
-		SvelteKitPWA()
+		SvelteKitPWA(),
+		sentrySvelteKit({
+			authToken: process.env.SENTRY_AUTH_TOKEN,
+			org: "rastreosat",
+			project: "rastreosat",
+		}),
 	],
 	server: {
 		proxy: {
