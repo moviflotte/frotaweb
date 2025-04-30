@@ -10,7 +10,7 @@ export default defineConfig({
 		sentrySvelteKit({
 			authToken: process.env.SENTRY_AUTH_TOKEN,
 			org: "rastreosat",
-			project: "rastreosat",
+			project: "frotaweb",
 		}),
 	],
 	server: {
