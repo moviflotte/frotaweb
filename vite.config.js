@@ -17,7 +17,7 @@ export default defineConfig({
 		proxy: {
 			'/traccar-cesium': 'https://jcardus.github.io',
 			'/dash': 'https://frotaweb-dash.pages.dev',
-			'/reports': 'https://traccar-reports.pages.dev',
+			'/treports': 'https://traccar-reports.pages.dev',
 			'/traccar': 'https://frotaweb-traccar.pages.dev',
 			'/api/socket': 'ws://gps.rastreosat.com.br',
 			'/api': 'http://gps.rastreosat.com.br',
