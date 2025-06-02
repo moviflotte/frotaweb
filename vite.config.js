@@ -15,6 +15,7 @@ export default defineConfig({
 	],
 	server: {
 		proxy: {
+			'/quicksight': 'https://dash.frotaweb.com',
 			'/traccar-cesium': 'https://jcardus.github.io',
 			'/dash': 'https://frotaweb-dash.pages.dev',
 			'/treports': 'https://traccar-reports.pages.dev',
