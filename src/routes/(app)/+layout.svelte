@@ -20,6 +20,7 @@
     ]
     if (data.session && data.session.deviceLimit === -1) {
         menuItems.push({url: '/cfg', value: t('Config')})
+        menuItems.push({url: '/licenses', value: t('Licenses')})
     }
 
     const logout = () => fetch('/api/session', { method: 'DELETE' })
