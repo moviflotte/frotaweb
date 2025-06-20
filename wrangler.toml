@@ -1,0 +1,5 @@
+name = "frotaweb"
+compatibility_date = "2025-06-19"
+
+[vars]
+TRACCAR_SERVER = "gps.frotaweb.com"

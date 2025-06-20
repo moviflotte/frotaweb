@@ -4,6 +4,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
+		"wrangler": "npx wrangler pages dev . ",
 		"build": "vite build",
 		"preview": "vite preview",
 		"lint": "eslint ."
@@ -27,6 +28,8 @@
 		"@sentry/sveltekit": "^9.15.0",
 		"@sveltejs/adapter-static": "^3.0.6",
 		"@tailwindcss/forms": "^0.5.9",
+		"@turf/distance": "^7.2.0",
+		"@turf/helpers": "^7.2.0",
 		"amazon-quicksight-embedding-sdk": "^2.10.1",
 		"aws4fetch": "^1.0.20"
 	}
