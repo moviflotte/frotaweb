@@ -1,4 +1,5 @@
 <script>
+    import { version } from '$app/environment';
     let title = '', favicon = ''
     fetch(`https://raw.githubusercontent.com/rastreosat/rastreosat.github.io/refs/heads/main/${
         window.location.hostname}/info.json`).then(r => {
@@ -21,7 +22,7 @@
 
 <svelte:head>
     {@html webManifestLink}
-    <title>{title}
+    <title>{title} {version}
     </title>
     <link rel="icon" href="{favicon}"/>
 </svelte:head>
