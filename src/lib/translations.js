@@ -23,6 +23,7 @@ export default {
     },
     pt: {
         'Unauthorized': 'A combinação utilizador / senha é inválida',
-        '401': 'A combinação utilizador / senha é inválida'
+        '401': 'A combinação utilizador / senha é inválida',
+        'Email': 'Email / Usuário'
     }
 };
