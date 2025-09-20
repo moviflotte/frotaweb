@@ -1,6 +1,6 @@
 {
 	"name": "frotaweb",
-	"version": "1.0.6",
+	"version": "1.0.9",
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
@@ -28,9 +28,12 @@
 		"@sentry/sveltekit": "^9.15.0",
 		"@sveltejs/adapter-static": "^3.0.6",
 		"@tailwindcss/forms": "^0.5.9",
+		"@turf/bbox": "^7.2.0",
 		"@turf/distance": "^7.2.0",
 		"@turf/helpers": "^7.2.0",
 		"amazon-quicksight-embedding-sdk": "^2.10.1",
-		"aws4fetch": "^1.0.20"
-	}
+		"aws4fetch": "^1.0.20",
+		"install": "^0.13.0"
+	},
+	"packageManager": "pnpm@10.12.1+sha512.f0dda8580f0ee9481c5c79a1d927b9164f2c478e90992ad268bbb2465a736984391d6333d2c327913578b2804af33474ca554ba29c04a8b13060a717675ae3ac"
 }
