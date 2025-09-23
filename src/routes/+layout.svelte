@@ -22,7 +22,7 @@
 
 <svelte:head>
     {@html webManifestLink}
-    <title>{title} {version}
+    <title>{title || window.location.host} {version}
     </title>
     <link rel="icon" href="{favicon}"/>
 </svelte:head>
