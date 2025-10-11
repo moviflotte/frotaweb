@@ -1,12 +1,11 @@
 {
 	"name": "frotaweb",
-	"version": "1.0.14",
+	"version": "1.0.17",
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
-		"wrangler": "npx wrangler pages dev . ",
 		"build": "vite build",
-		"preview": "vite preview",
+		"preview": "vite build && npx wrangler pages dev build",
 		"lint": "eslint ."
 	},
 	"devDependencies": {

@@ -16,7 +16,8 @@
         {url: '/map', value: 'Mapa'},
         {url: '/map/reports/route', value: t('Relatórios')},
         {url: '/rep', value: t('Relatórios Gestão')},
-        {url: '/map/settings/preferences', value: t('Definições')}
+        {url: '/map/settings/preferences', value: t('Definições')},
+        {url: '/ai', value: t('Assistente') + ' ✨'}
     ]
     if (data.session && data.session.deviceLimit === -1) {
         menuItems.push({url: '/cfg', value: t('Config')})
