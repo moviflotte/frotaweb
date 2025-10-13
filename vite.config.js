@@ -8,10 +8,12 @@ export default defineConfig({
 		sveltekit(),
 		SvelteKitPWA(),
 		sentrySvelteKit({
-			authToken: process.env.SENTRY_AUTH_TOKEN,
-			org: "rastreosat",
-			project: "frotaweb",
-		}),
+            sourceMapsUploadOptions: {
+                org: process.env.SENTRY_ORG || "rastreosat",
+                project: "frotaweb",
+                authToken: process.env.SENTRY_AUTH_TOKEN,
+            }
+		})
 	],
 	server: {
 		proxy: {
