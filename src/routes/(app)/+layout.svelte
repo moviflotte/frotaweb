@@ -17,7 +17,8 @@
         {url: '/map/reports/route', value: t('Relatórios')},
         {url: '/rep', value: t('Relatórios Gestão')},
         {url: '/map/settings/preferences', value: t('Definições')},
-        {url: '/ai', value: t('Assistente') + ' ✨'}
+        {url: '/ai', value: t('Assistente') + ' ✨'},
+        {url: '/temp', value: t('Temperatura') + ' 🌡️'}
     ]
     if (data.session && data.session.deviceLimit === -1) {
         menuItems.push({url: '/cfg', value: t('Config')})
@@ -42,7 +43,7 @@
                         <img class="h-8 hidden dark:block" src="https://rastreosat.github.io/{window.location.hostname}/logo_large_dark.svg" alt="{window.location.hostname}">
                     </div>
                     <div class="hidden md:block">
-                        <div class="ml-10 flex items-baseline space-x-4">
+                        <div class="ml-10 flex items-baseline space-x-2">
                             {#each menuItems as item}
                             <a onclick="{() => headerClicked.set(item.url + '?t=' + new Date().getTime())}" href="{item.url}" class="{item.url === $page.url.pathname ? 'bg-primary text-white' : 'text-gray-400 hover:bg-gray-400 hover:text-white'}  rounded-md px-3 py-1 text-sm font-medium " aria-current="page">{item.value}</a>
                             {/each}
