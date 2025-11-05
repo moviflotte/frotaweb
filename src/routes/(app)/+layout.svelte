@@ -45,7 +45,9 @@
                     <div class="hidden md:block">
                         <div class="ml-10 flex items-baseline space-x-2">
                             {#each menuItems as item}
-                            <a onclick="{() => headerClicked.set(item.url + '?t=' + new Date().getTime())}" href="{item.url}" class="{item.url === $page.url.pathname ? 'bg-primary text-white' : 'text-gray-400 hover:bg-gray-400 hover:text-white'}  rounded-md px-3 py-1 text-sm font-medium " aria-current="page">{item.value}</a>
+                                <a onclick="{() => headerClicked.set(item.url + '?t=' + new Date().getTime())}" href="{item.url}"
+                                   class="{item.url === $page.url.pathname ? 'bg-primary text-white' : 'text-gray-400 hover:bg-gray-400 hover:text-white'}
+                                   rounded-md px-1 py-1 text-sm font-medium " aria-current="page">{item.value}</a>
                             {/each}
                         </div>
                     </div>
